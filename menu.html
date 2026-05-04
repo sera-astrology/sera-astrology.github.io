@@ -135,9 +135,13 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
 .hamburger.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:rgba(8,6,18,.97);z-index:200;transition:right .4s ease;overflow-y:auto;padding-top:80px}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:199}
+.mobile-overlay.open{display:block}
+.mobile-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:rgba(8,6,18,.97);z-index:200;transition:right .4s ease;overflow-y:auto}
 .mobile-menu.open{right:0}
-.mobile-menu-inner{padding:24px}
+.mobile-menu-inner{padding:24px;padding-top:20px}
+.mobile-menu-close{display:block;background:none;border:none;color:rgba(184,150,106,.5);font-size:18px;cursor:pointer;margin-left:auto;margin-bottom:16px;padding:8px;transition:color .3s}
+.mobile-menu-close:hover{color:var(--gold)}
 .mobile-menu-item{display:block;font-family:'Raleway',sans-serif;font-weight:200;font-size:11px;letter-spacing:.3em;color:rgba(184,150,106,.7);text-transform:uppercase;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(184,150,106,.1);transition:color .3s}
 .mobile-menu-item:hover{color:var(--gold)}
 .mobile-menu-category{font-family:'Raleway',sans-serif;font-weight:200;font-size:9px;letter-spacing:.4em;color:rgba(184,150,106,.3);text-transform:uppercase;padding:20px 0 8px;border-bottom:1px solid rgba(184,150,106,.1)}
@@ -191,9 +195,13 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
   </button>
 </header>
 
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-inner">
+    <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
     <a href="#firsttime" class="mobile-menu-item" onclick="closeMenu()">初めての方へ</a>
     <a href="#about" class="mobile-menu-item" onclick="closeMenu()">自己紹介</a>
     <p class="mobile-menu-category">鑑定・リーディング</p>
@@ -206,6 +214,8 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
     <a href="reiki.html" class="mobile-menu-sub" onclick="closeMenu()">エンソフィックレイキ</a>
     <a href="spark.html" class="mobile-menu-sub" onclick="closeMenu()">スパークオブライフ</a>
     <a href="kshm.html" class="mobile-menu-sub" onclick="closeMenu()">キングソロモンヒーリング</a>
+    <p class="mobile-menu-category">お問い合わせ</p>
+    <a href="https://docs.google.com/forms/d/1KXaENVZHB48H83gGB6Ji-37oEZg9hVCtoANh9iOuPcM/preview" target="_blank" class="mobile-menu-sub" onclick="closeMenu()">お問い合わせフォームへ</a>
   </div>
 </div>
 
@@ -490,14 +500,25 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
 <script>
 function toggleMenu() {
   var menu = document.getElementById('mobileMenu');
+  var overlay = document.getElementById('mobileOverlay');
   var btn = document.querySelector('.hamburger');
-  menu.classList.toggle('open');
-  btn.classList.toggle('active');
+  var isOpen = menu.classList.contains('open');
+  if (isOpen) {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.classList.remove('active');
+  } else {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    btn.classList.add('active');
+  }
 }
 function closeMenu() {
   var menu = document.getElementById('mobileMenu');
+  var overlay = document.getElementById('mobileOverlay');
   var btn = document.querySelector('.hamburger');
   menu.classList.remove('open');
+  overlay.classList.remove('open');
   btn.classList.remove('active');
 }
 document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
