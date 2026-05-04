@@ -11,13 +11,13 @@
   --gold:#b8966a;--gold-l:#d4b896;--gold-p:#f5ede0;
   --ink:#1a1410;--ink-m:#3d3028;--ink-s:#6b5e52;
   --cream:#faf7f2;--cream-d:#f0e8dc;--white:#fff;
-  --purple-pale:#f5f0fa;--purple-d:#2d1f42;--purple:#6b4f8a;
+  --gold-light:#fdf8f0;--gold-mid:#c9a96e;--ivory:#fffff0;--ivory-d:#f8f2e0;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Noto Serif JP',serif;background:var(--cream);color:var(--ink);line-height:1.9;overflow-x:hidden}
 
 /* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,10,35,.88);backdrop-filter:blur(8px)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,15,5,.92);backdrop-filter:blur(8px)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:20px;color:var(--gold-l);letter-spacing:.1em;text-decoration:none}
 .nav-back{font-family:'Raleway',sans-serif;font-weight:200;font-size:10px;letter-spacing:.25em;color:rgba(184,150,106,.5);text-transform:uppercase;text-decoration:none;transition:color .3s}
 .nav-back:hover{color:var(--gold)}
@@ -40,42 +40,42 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display
 
 /* WHAT */
 .what{background:var(--white);padding:100px 24px}
-.what-lead{font-size:14px;line-height:2.5;color:var(--ink-s);margin-bottom:28px}
-.what-highlight{padding:28px 32px;background:var(--purple-d);font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(17px,2.3vw,23px);color:rgba(212,184,150,.9);text-align:center;line-height:1.9;margin-bottom:28px}
-.what-body{font-size:14px;line-height:2.5;color:var(--ink-s);margin-bottom:16px}
+.what-lead{font-size:15.5px;line-height:2.5;color:var(--ink-s);margin-bottom:28px}
+.what-highlight{padding:28px 32px;background:var(--ink);font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(17px,2.3vw,23px);color:rgba(212,184,150,.9);text-align:center;line-height:1.9;margin-bottom:28px}
+.what-body{font-size:15.5px;line-height:2.5;color:var(--ink-s);margin-bottom:16px}
 .what-body strong{color:var(--ink);font-weight:400}
 
 /* DNA DIFF */
-.diff{background:var(--purple-pale);padding:100px 24px}
+.diff{background:var(--cream-d);padding:100px 24px}
 .diff-inner{max-width:760px;margin:0 auto}
 .diff-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
 .diff-card{padding:32px 28px;background:var(--white);border:1px solid rgba(184,150,106,.2);text-align:center}
 .diff-card-tag{font-family:'Raleway',sans-serif;font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
 .diff-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);margin-bottom:8px;font-weight:400}
-.diff-card-desc{font-size:13px;line-height:2;color:var(--ink-s)}
+.diff-card-desc{font-size:15px;line-height:2;color:var(--ink-s)}
 .diff-arrow{text-align:center;font-size:28px;color:var(--gold);margin-bottom:32px}
-.diff-note{padding:24px 32px;background:var(--white);border-left:3px solid var(--gold);font-size:14px;line-height:2.3;color:var(--ink-s)}
+.diff-note{padding:24px 32px;background:var(--white);border-left:3px solid var(--gold);font-size:15.5px;line-height:2.3;color:var(--ink-s)}
 .diff-note strong{color:var(--ink);font-weight:400}
 
 /* CHANGES */
 .changes{background:var(--white);padding:100px 24px}
-.changes-intro{font-size:14px;line-height:2.3;color:var(--ink-s);margin-bottom:32px;text-align:center}
+.changes-intro{font-size:15.5px;line-height:2.3;color:var(--ink-s);margin-bottom:32px;text-align:center}
 .changes-list{display:flex;flex-direction:column}
 .change-item{padding:18px 0;border-bottom:1px solid var(--cream-d);display:flex;gap:16px;align-items:flex-start}
 .change-item:first-child{border-top:1px solid var(--cream-d)}
 .change-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;margin-top:11px;flex-shrink:0}
-.change-text{font-size:14px;line-height:2;color:var(--ink-s)}
+.change-text{font-size:15.5px;line-height:2;color:var(--ink-s)}
 
 /* VOICE */
-.voice{background:var(--purple-pale);padding:100px 24px}
+.voice{background:var(--cream-d);padding:100px 24px}
 .voice-grid{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
 .voice-card{background:var(--white);padding:28px 32px;position:relative;border:1px solid rgba(184,150,106,.15)}
 .voice-card::before{content:'"';position:absolute;top:12px;left:18px;font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold-p);line-height:1}
-.voice-text{font-size:13px;line-height:2.3;color:var(--ink-s);margin-top:8px}
+.voice-text{font-size:15px;line-height:2.3;color:var(--ink-s);margin-top:8px}
 
 /* FLOW */
 .flow{background:var(--white);padding:100px 24px}
-.flow-note{text-align:center;font-size:13px;line-height:2;color:var(--ink-s);margin-bottom:40px;padding:20px 24px;background:var(--cream);border-left:3px solid var(--gold)}
+.flow-note{text-align:center;font-size:15px;line-height:2;color:var(--ink-s);margin-bottom:40px;padding:20px 24px;background:var(--cream);border-left:3px solid var(--gold)}
 .flow-steps{display:flex;flex-direction:column;max-width:760px;margin:0 auto}
 .flow-step{display:flex;gap:24px;padding-bottom:32px}
 .flow-step:last-child{padding-bottom:0}
@@ -85,15 +85,15 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display
 .flow-step:last-child .step-l{display:none}
 .step-body{padding-top:8px}
 .step-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;color:var(--ink);margin-bottom:4px}
-.step-desc{font-size:13px;line-height:2.2;color:var(--ink-s)}
+.step-desc{font-size:15px;line-height:2.2;color:var(--ink-s)}
 
 /* FOR YOU */
-.foryou{background:var(--purple-pale);padding:100px 24px}
+.foryou{background:var(--cream-d);padding:100px 24px}
 .foryou-list{display:flex;flex-direction:column;max-width:760px;margin:0 auto}
 .foryou-item{padding:18px 0;border-bottom:1px solid rgba(184,150,106,.2);display:flex;gap:16px;align-items:center}
 .foryou-item:first-child{border-top:1px solid rgba(184,150,106,.2)}
 .n-check{width:26px;height:26px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:11px}
-.foryou-text{font-size:14px;line-height:1.9;color:var(--ink-m)}
+.foryou-text{font-size:15.5px;line-height:1.9;color:var(--ink-m)}
 
 /* OFFER */
 .offer{background:var(--white);padding:100px 24px}
@@ -109,12 +109,12 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display
 .offer-details{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;text-align:left;padding:20px;background:var(--white)}
 .offer-detail{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--ink-s)}
 .detail-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:9px}
-.offer-note-box{font-size:11px;color:rgba(107,94,82,.5);line-height:2;margin-bottom:28px;padding:14px 18px;border:1px solid rgba(184,150,106,.15)}
+.offer-note-box{font-size:13px;color:rgba(107,94,82,.5);line-height:2;margin-bottom:28px;padding:14px 18px;border:1px solid rgba(184,150,106,.15)}
 .btn-primary{display:inline-block;padding:16px 44px;border:1px solid var(--gold);color:var(--gold);font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;background:transparent;text-align:center;transition:all .4s;width:100%}
 .btn-primary:hover{background:rgba(184,150,106,.1)}
 
 /* FOOTER */
-footer{background:#140a22;padding:48px 24px;text-align:center}
+footer{background:#0f0c05;padding:48px 24px;text-align:center}
 .f-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:24px;color:var(--gold-l);letter-spacing:.1em;margin-bottom:6px}
 .f-logo span{font-size:11px;display:block;letter-spacing:.4em;color:rgba(184,150,106,.3);font-family:'Raleway',sans-serif;margin-top:2px}
 .f-nav{display:flex;justify-content:center;gap:24px;margin:20px 0;flex-wrap:wrap}
@@ -143,11 +143,10 @@ footer{background:#140a22;padding:48px 24px;text-align:center}
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <p class="hero-tag">Activation Menu — Sera</p>
-    <h1 class="hero-h1">
-      眠っていたひらめきが目覚め、<br>
-      <em>人生が本来の流れへと動き出す。</em>
+    <h1 class="hero-h1" style="color:#fff">
+      フルスピリットアクティベーション
     </h1>
-    <p class="hero-lead">フルスピリットアクティベーション</p>
+    <p class="hero-lead">眠っていたひらめきが目覚め、<br>人生が本来の流れへと動き出す。</p>
   </div>
 </section>
 
@@ -257,9 +256,10 @@ footer{background:#140a22;padding:48px 24px;text-align:center}
       <div class="offer-detail"><div class="detail-dot"></div><span>対面のみ（千葉県船橋市・詳細はお申し込み後にご案内）</span></div>
       <div class="offer-detail"><div class="detail-dot"></div><span>DNAアクティベーションを受けてからのご受講をおすすめしています</span></div>
       <div class="offer-detail"><div class="detail-dot"></div><span>前回のセッションから3週間以上のインターバルが必要です</span></div>
+      <div class="offer-detail"><div class="detail-dot"></div><span>お支払い：当日現金、または事前銀行振込</span></div>
     </div>
     <div class="offer-note-box">※場所の詳細は、お申し込み確認後にメールにてご案内します。<br>※ご不明な点はお気軽にお問い合わせください。</div>
-    <button class="btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSe_WHMaaquiftdreaGFOI-RPydxtrgEu29zK__zo2xF0EYokQ/viewform?usp=sharing&ouid=111610532946251769886','_blank')"><span>このセッションを申し込む</span></button>
+    <button class="btn-primary" onclick="window.open('https://docs.google.com/forms/d/10YZCPfR4DKW5Y_yi4VFryZiNsACYyP2UEaSM2LtFMng/viewform','_blank')"><span>このセッションを申し込む</span></button>
   </div>
 </section>
 
