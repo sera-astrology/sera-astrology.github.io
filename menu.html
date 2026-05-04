@@ -24,11 +24,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display
 .nav-link{font-family:'Raleway',sans-serif;font-weight:200;font-size:10px;letter-spacing:.2em;color:rgba(184,150,106,.5);text-transform:uppercase;text-decoration:none;transition:color .3s}
 .nav-link:hover{color:var(--gold)}
 .nav-dropdown{position:relative}
-.nav-dropdown-trigger{cursor:pointer}
+.nav-dropdown-trigger{cursor:pointer;user-select:none}
 .nav-dropdown-trigger:hover{color:var(--gold)}
-.nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(10,8,20,.96);border:1px solid rgba(184,150,106,.2);padding:8px 0;min-width:220px;z-index:200;margin-top:12px}
-.nav-dropdown:hover .nav-dropdown-menu{display:block}
-.nav-dropdown-item{display:block;padding:10px 20px;font-family:'Raleway',sans-serif;font-weight:200;font-size:10px;letter-spacing:.2em;color:rgba(184,150,106,.5);text-transform:uppercase;text-decoration:none;transition:all .3s;white-space:nowrap}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(10,8,20,.97);border:1px solid rgba(184,150,106,.2);padding:8px 0;min-width:220px;z-index:200}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-item{display:block;padding:12px 20px;font-family:'Raleway',sans-serif;font-weight:200;font-size:10px;letter-spacing:.2em;color:rgba(184,150,106,.5);text-transform:uppercase;text-decoration:none;transition:all .3s;white-space:nowrap}
 .nav-dropdown-item:hover{color:var(--gold);background:rgba(184,150,106,.08)}
 .nav-link:hover{color:var(--gold)}
 
@@ -450,5 +450,23 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
   <p class="f-copy">© 2025 Sera. All rights reserved.</p>
 </footer>
 
+<script>
+document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var menu = this.nextElementSibling;
+    var isOpen = menu.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) {
+      m.classList.remove('open');
+    });
+    if (!isOpen) menu.classList.add('open');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) {
+    m.classList.remove('open');
+  });
+});
+</script>
 </body>
 </html>
