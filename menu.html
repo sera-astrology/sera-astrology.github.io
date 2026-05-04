@@ -129,9 +129,25 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
 .f-nav a:hover{color:var(--gold)}
 .f-copy{font-size:10px;color:rgba(184,150,106,.2);letter-spacing:.1em}
 
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:201}
+.hamburger span{display:block;width:24px;height:1px;background:var(--gold-l);transition:all .3s}
+.hamburger.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:rgba(8,6,18,.97);z-index:200;transition:right .4s ease;overflow-y:auto;padding-top:80px}
+.mobile-menu.open{right:0}
+.mobile-menu-inner{padding:24px}
+.mobile-menu-item{display:block;font-family:'Raleway',sans-serif;font-weight:200;font-size:11px;letter-spacing:.3em;color:rgba(184,150,106,.7);text-transform:uppercase;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(184,150,106,.1);transition:color .3s}
+.mobile-menu-item:hover{color:var(--gold)}
+.mobile-menu-category{font-family:'Raleway',sans-serif;font-weight:200;font-size:9px;letter-spacing:.4em;color:rgba(184,150,106,.3);text-transform:uppercase;padding:20px 0 8px;border-bottom:1px solid rgba(184,150,106,.1)}
+.mobile-menu-sub{display:block;font-family:'Noto Serif JP',serif;font-size:13px;color:rgba(184,150,106,.6);text-decoration:none;padding:12px 0 12px 12px;border-bottom:1px solid rgba(184,150,106,.08);transition:color .3s}
+.mobile-menu-sub:hover{color:var(--gold)}
+
 @media(max-width:768px){
   header{padding:14px 20px}
   .nav-links{display:none}
+  .hamburger{display:flex}
   .hero{min-height:80vh}
   .about-inner{grid-template-columns:1fr}
   .guide-cards{grid-template-columns:1fr}
@@ -170,7 +186,28 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
       </div>
     </div>
   </nav>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="#firsttime" class="mobile-menu-item" onclick="closeMenu()">初めての方へ</a>
+    <a href="#about" class="mobile-menu-item" onclick="closeMenu()">自己紹介</a>
+    <p class="mobile-menu-category">鑑定・リーディング</p>
+    <a href="https://sera-astrology.github.io" target="_blank" class="mobile-menu-sub" onclick="closeMenu()">星読みリーディング</a>
+    <a href="tarot.html" class="mobile-menu-sub" onclick="closeMenu()">TRUEタロットリーディング</a>
+    <p class="mobile-menu-category">アクティベーション</p>
+    <a href="dna.html" class="mobile-menu-sub" onclick="closeMenu()">DNAアクティベーション</a>
+    <a href="fsa.html" class="mobile-menu-sub" onclick="closeMenu()">フルスピリットアクティベーション</a>
+    <p class="mobile-menu-category">ヒーリング</p>
+    <a href="reiki.html" class="mobile-menu-sub" onclick="closeMenu()">エンソフィックレイキ</a>
+    <a href="spark.html" class="mobile-menu-sub" onclick="closeMenu()">スパークオブライフ</a>
+    <a href="kshm.html" class="mobile-menu-sub" onclick="closeMenu()">キングソロモンヒーリング</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -451,6 +488,18 @@ footer{background:#08060f;padding:48px 24px;text-align:center}
 </footer>
 
 <script>
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('active');
+}
+function closeMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.querySelector('.hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('active');
+}
 document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
   trigger.addEventListener('click', function(e) {
     e.stopPropagation();
